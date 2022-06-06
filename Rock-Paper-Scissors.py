@@ -1,9 +1,15 @@
-# Rock, Paper, Scissors tas
+# Rock, Paper, Scissors task
+
+# Import a random module
 import random
+
+#Declaring accepted variables
 possible_option = ["R", "P", "S" ]
 
+
+
+#requesting player's input
 def player_choice():
-    #requesting player's input
     players_input = str(input("Enter your choice: " ))
     upper_players_input= players_input.upper()
     if upper_players_input == "R":
@@ -20,6 +26,8 @@ def player_choice():
 def cpu_choice():
     cpu_input = random.choice(possible_option)
     return cpu_input
+
+
 # printing their both choices
 def print_choices(x, y):
     print ("You {} : CPU {}" .format(x, y))
@@ -31,7 +39,7 @@ def checker(x, y):
     if x == y:
         print_choices(x,y)
         print("A Tie!")
-    #
+    #chenking for the winner
         main()
     elif x == "R":
         if y == "P":
@@ -52,6 +60,9 @@ def checker(x, y):
 
 # main funtion to link and run all functions
 def main():
+
+    print("Enter 'R' for Rock, 'P' for Paper, and 'S' For Scissors")
+
     players_move = player_choice()
     computer_move = cpu_choice()
 
@@ -62,4 +73,5 @@ def main():
 
     checker(players_move, computer_move)
 
+#Runnig the game.
 main()
